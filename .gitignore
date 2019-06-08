@@ -1,2 +1,7 @@
 yarn.lock
 node_modules/**
+build/*
+
+!build/index.js
+!build/block.css
+!build/editor.css

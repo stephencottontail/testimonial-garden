@@ -7,9 +7,13 @@
  */
 
 add_action( 'init', function() {
-    wp_register_script( 'sc-testimonial-garden', plugins_url( 'build/index.js', __FILE__ ), array() );
+    wp_register_script( 'sc-testimonial-garden', plugins_url( 'build/index.js', __FILE__ ), array( 'wp-blocks', 'wp-element' ) );
+    wp_register_style( 'sc-testimonial-block', plugins_url( 'build/block.css', __FILE__ ) );
+    wp_register_style( 'sc-testimonial-editor', plugins_url( 'build/editor.css', __FILE__ ) );
 
     register_block_type( 'sc/testimonial-garden', array(
-        'editor_script' => 'sc-testimonial-garden'
+        'editor_script' => 'sc-testimonial-garden',
+        'editor_style'  => 'sc-testimonial-editor',
+        'style'         => 'sc-testimonial-block'
     ) );
 } );
