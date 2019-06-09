@@ -7,7 +7,7 @@
  */
 
 add_action( 'init', function() {
-    wp_register_script( 'sc-testimonial-garden', plugins_url( 'build/index.js', __FILE__ ), array( 'wp-blocks', 'wp-element' ) );
+    wp_register_script( 'sc-testimonial-garden', plugins_url( 'build/index.js', __FILE__ ), array( 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element' ) );
     wp_register_style( 'sc-testimonial-block', plugins_url( 'build/block.css', __FILE__ ) );
     wp_register_style( 'sc-testimonial-editor', plugins_url( 'build/editor.css', __FILE__ ) );
 

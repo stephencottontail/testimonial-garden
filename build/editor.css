@@ -1,2 +1,47 @@
-.foo {
-  color: green; }
+.wp-block-sc-testimonial-garden .button {
+  background-color: #eff4f5;
+  border: 2px solid #0a3543;
+  box-shadow: none;
+  color: #0a3543;
+  height: auto;
+  padding: 5px 10px;
+  text-decoration: none; }
+  .wp-block-sc-testimonial-garden .button:hover, .wp-block-sc-testimonial-garden .button:focus {
+    background-color: #0a3543;
+    box-shadow: none;
+    color: #eff4f5;
+    text-decoration: none; }
+
+.wp-block-sc-testimonial-garden .button--secondary {
+  background-color: #eff4f5;
+  border: 2px solid #0a3543;
+  box-shadow: none;
+  color: #0a3543;
+  height: auto;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+  color: #0d4659; }
+  .wp-block-sc-testimonial-garden .button--secondary:hover, .wp-block-sc-testimonial-garden .button--secondary:focus {
+    background-color: #0a3543;
+    box-shadow: none;
+    color: #eff4f5;
+    text-decoration: none; }
+  .wp-block-sc-testimonial-garden .button--secondary:hover, .wp-block-sc-testimonial-garden .button--secondary:focus {
+    background-color: transparent;
+    border-color: transparent;
+    color: #0d4659;
+    text-decoration: underline; }
+
+.wp-block-sc-testimonial-garden.uploader {
+  background-color: #fefdfb;
+  padding: 10px; }
+
+.wp-block-sc-testimonial-garden .uploader__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0; }
+  .wp-block-sc-testimonial-garden .uploader__row:last-of-type {
+    margin-bottom: 0; }

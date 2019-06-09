@@ -1,2 +1,28 @@
-.foo {
-  color: green; }
+@import 'common';
+
+.wp-block-sc-testimonial-garden {
+    .button {
+        @include button;
+    }
+
+    .button--secondary {
+        @include button;
+        @include secondary;
+    }
+
+    &.uploader {
+        background-color: map-get( $white, "100" );
+        padding: 10px;
+    }
+
+    .uploader__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

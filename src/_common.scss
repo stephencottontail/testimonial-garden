@@ -1,0 +1,47 @@
+$blue: (
+  "500": hsl(195, 75%, 15%),
+  "400": hsl(195, 75%, 20%),
+  "300": hsl(195, 20%, 50%),
+  "200": hsl(195, 45%, 90%),
+  "100": hsl(195, 25%, 95%)
+);
+
+$white: (
+    "500": hsl(45, 50%, 10%),
+    "400": hsl(45, 50%, 15%),
+    "300": hsl(45, 30%, 30%),
+    "200": hsl(45, 20%, 85%),
+    "100": hsl(45, 50%, 99%)
+);
+
+@mixin button() {
+    background-color: map-get( $blue, "100" );
+    border: 2px solid map-get( $blue, "500" );
+    box-shadow: none;
+    color: map-get( $blue, "500" );
+    height: auto;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background-color: map-get( $blue, "500" );
+        box-shadow: none;
+        color: map-get( $blue, "100" );
+        text-decoration: none;
+    }
+}
+
+@mixin secondary() {
+    background-color: transparent;
+    border-color: transparent;
+    color: map-get( $blue, "400" );
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        border-color: transparent;
+        color: map-get( $blue, "400" );
+        text-decoration: underline;
+    }
+}
