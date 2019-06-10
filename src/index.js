@@ -21,6 +21,14 @@ registerBlockType( 'sc/testimonial-garden', {
         title: {
             type: 'string',
             default: ''
+        },
+        content: {
+            type: 'string',
+            default: ''
+        },
+        author: {
+            type: 'string',
+            default: ''
         }
     },
     edit,

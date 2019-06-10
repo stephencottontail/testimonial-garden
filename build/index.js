@@ -162,7 +162,9 @@ var edit = function edit(props) {
   var large = attributes.large,
       thumbnail = attributes.thumbnail,
       alt = attributes.alt,
-      title = attributes.title;
+      title = attributes.title,
+      content = attributes.content,
+      author = attributes.author;
 
   var UploadTarget = function UploadTarget() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
@@ -219,9 +221,39 @@ var edit = function edit(props) {
     initialOpen: true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelRow"], {
     className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className)
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(UploadTarget, null), thumbnail && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RemoveImageButton, null)), thumbnail && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ChosenImage, null)))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
-    className: 'foo'
-  }, alt || title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(UploadTarget, null), thumbnail && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RemoveImageButton, null)), thumbnail && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ChosenImage, null)))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'testimonial')
+  }, large && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+    src: large,
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'photo'),
+    alt: alt || undefined
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    className: 'content-input',
+    value: content,
+    tagName: "div",
+    multiline: true,
+    onChange: function onChange(content) {
+      return setAttributes({
+        content: content
+      });
+    },
+    placeholder: "Testimonial Content",
+    keepPlaceholderOnFocus: true,
+    autocompleters: false
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    className: 'author-input',
+    value: author,
+    tagName: "p",
+    multiline: false,
+    onChange: function onChange(author) {
+      return setAttributes({
+        author: author
+      });
+    },
+    placeholder: "Testimonial Author",
+    keepPlaceholderOnFocus: true,
+    autocompleters: false
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'uploader')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, 'uploader__row')
@@ -269,6 +301,14 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('sc/
       default: ''
     },
     title: {
+      type: 'string',
+      default: ''
+    },
+    content: {
+      type: 'string',
+      default: ''
+    },
+    author: {
       type: 'string',
       default: ''
     }

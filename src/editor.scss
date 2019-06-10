@@ -12,6 +12,7 @@
 
     &.uploader {
         background-color: map-get( $white, "100" );
+        margin-top: 20px;
         padding: 10px;
     }
 
@@ -24,5 +25,24 @@
         &:last-of-type {
             margin-bottom: 0;
         }
+    }
+
+    &.testimonial {
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px 0 rgba( black, 0.35 );
+        padding: 10px;
+    }
+
+    .photo {
+        display: block;
+        margin: 0 auto 10px;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+    }
+
+    .author-input {
+        font-style: italic;
     }
 }

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const edit = ( props ) => {
     const { className, attributes, setAttributes } = props;
-    const { large, thumbnail, alt, title } = attributes;
+    const { large, thumbnail, alt, title, content, author } = attributes;
 
     const UploadTarget = () => (
         <MediaUploadCheck>
@@ -61,7 +61,31 @@ const edit = ( props ) => {
                 }
             </PanelBody>
         </InspectorControls>,
-        <p className={ 'foo' }>{ ( alt || title ) }</p>,
+        <div className={ classnames( className, 'testimonial' ) }>
+            { large &&
+                <img src={ large } className={ classnames( className, 'photo' ) } alt={ ( alt || undefined ) } />
+            }
+            <RichText
+                className={ 'content-input' }
+                value={ content }
+                tagName='div'
+                multiline={ true }
+                onChange={ ( content ) => setAttributes( { content } ) }
+                placeholder='Testimonial Content'
+                keepPlaceholderOnFocus={ true }
+                autocompleters={ false }
+            />
+            <RichText
+                className={ 'author-input' }
+                value={ author }
+                tagName='p'
+                multiline={ false }
+                onChange={ ( author ) => setAttributes( { author } ) }
+                placeholder='Testimonial Author'
+                keepPlaceholderOnFocus={ true }
+                autocompleters={ false }
+            />
+        </div>,
         <div className={ classnames( className, 'uploader' ) }>
             <div className={ classnames( className, 'uploader__row' ) }>
                 <UploadTarget />

@@ -36,6 +36,7 @@
 
 .wp-block-sc-testimonial-garden.uploader {
   background-color: #fefdfb;
+  margin-top: 20px;
   padding: 10px; }
 
 .wp-block-sc-testimonial-garden .uploader__row {
@@ -45,3 +46,19 @@
   margin: 10px 0; }
   .wp-block-sc-testimonial-garden .uploader__row:last-of-type {
     margin-bottom: 0; }
+
+.wp-block-sc-testimonial-garden.testimonial {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.35);
+  padding: 10px; }
+
+.wp-block-sc-testimonial-garden .photo {
+  display: block;
+  margin: 0 auto 10px;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%; }
+
+.wp-block-sc-testimonial-garden .author-input {
+  font-style: italic; }
